@@ -1,0 +1,5 @@
+{
+  "name": "Carousel Prompt Generator",
+  "description": "Generate AI image prompts for Instagram carousels based on a topic and visual identity.",
+  "requestFramePermissions": []
+}

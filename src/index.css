@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cairo: "Cairo", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-playfair: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-cairo);
+    background-color: #080c14;
+    color: #F0EAD8;
+  }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #2a3d5c; border-radius: 2px; }
+}
+
+@layer utilities {
+  .shimmer {
+    position: absolute;
+    top: 0; left: -100%; width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 1.4s infinite;
+  }
+}
+
+@keyframes shimmer { to { left: 200%; } }
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-card-in {
+  animation: cardIn 0.3s ease forwards;
+}
